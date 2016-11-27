@@ -61,11 +61,25 @@ class SinglyLinkedList:
         else:
             previous.setNext(current.getNext())
 
+    def printList(self):
+        current = self.head
+        full_list = ""
+        while current != None:
+            full_list += str(current.getData()) + " - "
+            current = current.getNext()
+        return full_list
+
+
 if __name__ == "__main__":
     mylist = SinglyLinkedList ()
     mylist.add(31)
     mylist.add(32)
+    mylist.add(36)
+    mylist.add(37)
+    mylist.add(38)
+    mylist.add(31)
     print mylist.size()
     print mylist.search(35)
-    mylist.remove(31)
+    print mylist.remove(31)
     print mylist.size()
+    print mylist.printList()
